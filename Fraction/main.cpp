@@ -103,6 +103,7 @@ public:
 	//Operators
 	Fraction& operator=(const Fraction& other)
 	{
+		
 		this->integer = other.integer;
 		this->numerator = other.numerator;
 		this->denominator = other.denominator;
@@ -117,6 +118,17 @@ public:
 	{
 		return *this = *this + other;
 	}
+	Fraction& operator/=(Fraction& other)
+	{
+		
+		return *this = *this* (-1*other.to_improper());
+			
+	}
+	/*Fraction& operator-=(const Fraction& other)
+	{
+		
+		return *this = *this - *other;
+	}*/
 	//Arithmetical operators
 	/*Fraction operator*(const Fraction& other) const
 	{
@@ -261,7 +273,13 @@ void main()
 	Fraction B(3, 4, 5);
 	cout << A * B << endl;
 	cout << "\n---------------------------------------------------------------\n" << endl;
-	cout << (A += B) << endl;
+	//cout << (A += B) << endl;
+	//cout << "\n---------------------------------------------------------------\n" << endl;
+	///*cout << (A -= B) << endl;
+	//cout << "\n---------------------------------------------------------------\n" << endl;*/
+	//cout << (A *= B) << endl;
+	//cout << "\n---------------------------------------------------------------\n" << endl;
+	cout << (A /= B) << endl;
 	cout << "\n---------------------------------------------------------------\n" << endl;
 	
 
